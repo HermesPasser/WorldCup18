@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Try Ramu</title>
+		<style>
+			body { background-color: gray;}
+			
+			.editor{
+				float: left;
+			}
+			
+			.code{
+				float: right;
+				background-color: white;
+			}
+			
+			canvas { 
+				background-color: white;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script type="text/javascript" src="../ramu-0.7c.js"></script>
+		<div class="buttons">
+			<button onclick="clearCode()" >Clear</button>
+			<!-- <button onclick="editor()">Show/Hide Editor</button> -->
+			<button onclick="execute()">Execute</button>
+			<!-- <button onclick="showRamu()">Show/Hide Ramu</button> -->
+		</div>
+		
+		<div class="editor">
+			<textarea id="editor" rows="20" cols="50"></textarea>
+		</div>
+		
+		<div class="code">
+			<script type="text/javascript" id="code"></script>
+		</div>
+		
+		<script type="text/javascript" src="logic.js"></script>
+	</body>
+</html> 
