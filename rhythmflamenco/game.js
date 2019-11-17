@@ -1,7 +1,7 @@
 const MUSIC = 'res/2AiresChoqueros.ogg'
 const DIRECTION = {TOP: 38, LEFT: 37, RIGHT: 39, BOTTOM: 40}; // arrows key code
 
-class Slot extends SimpleRectCollider{
+class Slot extends SimpleRectCollisor{
 	constructor(x, y, direction){
 		super(x + 25, y + 25, 25, 25);
 		this.sprite = new Sprite(Ramu.Utils.getImage('res/slot.png'), x, y, 50, 50);
@@ -48,7 +48,7 @@ class Arrow extends Sprite{
 	}
 	
 	start(){
-		this.collisor = new SimpleRectCollider(this.x + 25, this.y - 25, 25, 25);
+		this.collisor = new SimpleRectCollisor(this.x + 25, this.y - 25, 25, 25);
 		this.collisor.direction = this.direction;
 		this.collisor.parent = this;
 		this.collisor.tag = 'arrow';
@@ -85,11 +85,11 @@ class Game extends GameObj{
 		this.started = false;
 		this.gameEnd = false;
 		
-		this.startText = new Ramu.Text("Press 'space' to start", Ramu.width/2 - 50, Ramu.height/2, 300);
+		this.startText = new Text("Press 'space' to start", Ramu.width/2 - 50, Ramu.height/2, 300);
 		this.startText.fillStyle = 'white';
-		this.infodump = new Ramu.Text("Play using the 'arrows'. Hermes Passer, in 2018-06-22", 1, 20, 300);
+		this.infodump = new Text("Play using the 'arrows'. Hermes Passer, in 2018-06-22", 1, 20, 300);
 		this.infodump.fillStyle = 'white';
-		this.score = new Ramu.Text('', 1, 40, 300);
+		this.score = new Text('', 1, 40, 300);
 		this.score.fillStyle = 'white';
 		
 		this.timeToInstantiate = 2;
